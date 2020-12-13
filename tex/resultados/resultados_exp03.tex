@@ -1,0 +1,74 @@
+\subsection{Experimento 03}
+\begin{frame}{Resultado da Calibração}
+
+\begin{figure}
+    \begin{subfigure}{.45\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{figuras/resultados/exp03/curva_feedforward_esquerdo100.eps}
+        \caption{Motor esquerdo.}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/resultados/exp03/curva_feedforward_direito100.eps}
+        \caption{Motor direito.}
+    \end{subfigure}
+    \caption{Curva $\omega_{ss}(u)$.}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Resultado da Aproximação do Comportamento do Sistema}
+
+
+\begin{figure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/resultados/exp03/regressao_vs_medido_esquerdo100.eps}
+        \caption{Motor Esquerdo.}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/resultados/exp03/regressao_vs_medido_direito100.eps}
+        \caption{Motor Direito.}
+    \end{subfigure}
+    \caption{Curva $\omega(t)$ teórica versus $\omega_{\text{medido}}$.}
+\end{figure}
+    
+\end{frame}
+
+
+\begin{frame}{Resultado da Filtragem}
+
+    \begin{figure}
+        \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figuras/resultados/exp03/filtro_vs_sem_filtro_esquerdo100.eps}
+            \caption{Motor Esquerdo.}
+        \end{subfigure}
+        \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{figuras/resultados/exp03/filtro_vs_sem_filtro_direito100.eps}
+            \caption{Motor Direito.}
+        \end{subfigure}
+        \caption{Comparação entre a velocidade estimativa $\hat{\omega}$ e a velocidade $\omega$ medida.}
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}{Resultado do Controle}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{figuras/resultados/exp03/controlador_vs_sem_controlador100.eps}
+        \caption{Comparação entre o sistema com controlador e sem controlador.}
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}{Comparação}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{figuras/resultados/exp03/antes_vs_depois100.eps}
+        \caption{Resposta sem o filtro de \emph{kalman} e sem controle versus com controlador e com o filtro.}
+    \end{figure}
+\end{frame}
