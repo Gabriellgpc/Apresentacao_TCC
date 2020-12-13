@@ -1,0 +1,371 @@
+% Referencias utilizadas:
+% http://people.csail.mit.edu/rudolph/Teaching/Articles/BTBook.pdf
+% https://lastminuteengineers.com/esp32-arduino-ide-tutorial/
+
+@article{teng1970theory,
+  title={Theory and application of Kalman filtering},
+  author={Teng, L},
+  year={1970}
+}
+
+% O trabalho mais parecido com o meu (que encontrei até o momento pelo menos).
+@ARTICLE{low_precision_encoder01,  
+    author={ {Taeg-Joon Kweon} and  {Dong-Seok Hyun}},
+    journal={IEEE Transactions on Power Electronics},  
+    title={High-performance speed control of electric machine using low-precision shaft encoder},   
+    year={1999},
+    volume={14},
+    number={5},
+    pages={838-849},
+    doi={10.1109/63.788480}
+}
+% Tudo trabalho do Y. Hori.
+@INPROCEEDINGS{Y_HORI_01,  
+    author={Y. {Hori}},
+    booktitle={Proceedings 1993 Asia-Pacific Workshop on Advances in Motion Control},   
+    title={High performance control of servomotors with low precision shaft encoder using instantaneous speed observer and adaptive identification of inertia moment},   
+    year={1993},  
+    volume={},  
+    number={},  
+    pages={7-12},  
+    doi={10.1109/APWAM.1993.316178}
+}
+
+@INPROCEEDINGS{Y_HORI_02,  
+    author={Y. {Hori}},  
+    booktitle={Proceedings of IECON '93 - 19th Annual Conference of IEEE Industrial Electronics},   
+    title={Robust and adaptive control of a servomotor using low precision shaft encoder},   
+    year={1993},  
+    volume={},  
+    number={}, 
+    pages={73-78 vol.1},  
+    doi={10.1109/IECON.1993.339103}
+}
+    
+
+% Gostei do resumo(abstract).
+% O trabalho apresenta análises comparativas sobre diferentes métodos de medição de velocidade e state stimation algorithms suitables for low resolution incremental encoders (aplicaveis para encoders de baixa resolução)
+% Apresenta uma analise bem completa sobre:
+% Frequency measurement and Period measurement
+@INPROCEEDINGS{analise_incr_enc,  
+    author={R. {Petrella} and M. {Tursini} and L. {Peretti} and M. {Zigliotto}},  
+    booktitle={2007 International Aegean Conference on Electrical Machines and Power Electronics},   
+    title={Speed measurement algorithms for low-resolution incremental encoder equipped drives: a comparative analysis}, 
+    year={2007},  
+    volume={},  
+    number={},  
+    pages={780-787}, 
+    doi={10.1109/ACEMP.2007.4510607}
+}
+
+
+% Contem uma boa introdução (simples e direto) sobre encoders.
+% Fala sobre os dois principais métodos de leitura dos encoders: leitura por contagem de período e por contagem de frequência.
+% Comenta sobre o uso de ambas, sendo uma melhor para baixas velocidades e a outra para altas velocidades. E comenta sobre o uso dessas de forma alternada.
+% A proposta deste trabalho é utilizar uma única técnica, porém realizando um janelamento adaptativo, basicamente é a contagem de pulsos (leitura por contagem de frequência) sendo o número de amostras escolhidos adaptativamente.
+@INPROCEEDINGS{opt_encoder,  
+    author={N. {Johnson} and K. J. {Mohan} and K. E. {Janson} and J. {Jose}},  
+    booktitle={2013 International Mutli-Conference on Automation, Computing, Communication, Control and Compressed Sensing (iMac4s)},   
+    title={Optimization of incremental optical encoder pulse processing},   
+    year={2013},  
+    volume={},  
+    number={},  
+    pages={769-773},  
+    doi={10.1109/iMac4s.2013.6526510}
+}
+
+
+% Faz referencias à alguns métodos para observação da velocidade angular.
+% Possui uma seção sobre erros de quantização em encoders absolutos
+% Descobri aqui sobre alguns trabalhos que afirmam a natureza Gaussiana da incerteza proveniente da quantização:
+% Since the position error of the optical encoder can be regarded as Gaussian white noise [26], [27], the optimal estimation of the speed and load torque can be obtained by Kalman filter from a series of position signals with noises. 
+@ARTICLE{observer_speed,  
+    author={T. {Shi} and Z. {Wang} and C. {Xia}},  
+    journal={IEEE Transactions on Industrial Electronics},  
+    title={Speed Measurement Error Suppression for PMSM Control System Using Self-Adaption Kalman Observer},   
+    year={2015},  
+    volume={62},  
+    number={5},  
+    pages={2753-2763}, doi={10.1109/TIE.2014.2364989}
+}
+
+% Two-degree-of-freedom proportional integral
+% speed control of electrical drives with
+% Kalman-filter-based speed estimation
+
+@ARTICLE{TOF:PIControl,  author={C. {Xia} and B. {Ji} and T. {Shi} and Y. {Yan}},  journal={IET Electric Power Applications},   title={Two-degree-of-freedom proportional integral speed control of electrical drives with Kalman-filter-based speed estimation},   year={2016},  volume={10},  number={1},  pages={18-24},  doi={10.1049/iet-epa.2014.0516}}
+
+% Trabalhos sobre o ruído das quantizações
+% referencias citadas no trabalho: T. {Shi} and Z. {Wang} and C. {Xia}
+@ARTICLE{quantization_error_is_a_gaussian,  
+    author={A. {Sripad} and D. {Snyder}},  
+    journal={IEEE Transactions on Acoustics, Speech, and Signal Processing},   
+    title={A necessary and sufficient condition for quantization errors to be uniform and white},   
+    year={1977},  
+    volume={25},  
+    number={5}, 
+    pages={442-448},  
+    doi={10.1109/TASSP.1977.1162977}
+}
+
+@INPROCEEDINGS{quantization_error01,  author={F. {Briz} and J. A. {Cancelas} and A. {Diez}},  booktitle={Proceedings of IECON'94 - 20th Annual Conference of IEEE Industrial Electronics},   title={Speed measurement using rotary encoders for high performance AC drives},   year={1994},  volume={1},  number={},  pages={538-542 vol.1},  doi={10.1109/IECON.1994.397844}}
+
+@ARTICLE{quantization_error02,  
+    author={R. C. {Kavanagh} and J. M. D. {Murphy}},  
+    journal={IEEE Transactions on Instrumentation and Measurement},   
+    title={The effects of quantization noise and sensor nonideality on digital differentiator-based rate measurement},   
+    year={1998},  
+    volume={47},  
+    number={6},  
+    pages={1457-1463},  
+    doi={10.1109/19.746711}
+}
+
+% Projeto para robôs da categoria Middle Size da Robocup;
+% Possui introdução sobre a Robocup e a categoria;
+% Apresenta uma boa visão geral do sistema como um todo.
+@INPROCEEDINGS{robocup_middle_size,  
+    author={A. S. {Conceção} and A. P. {Moreira} and P. J. {Costa}},  
+    booktitle={2009 6th Latin American Robotics Symposium (LARS 2009)},   
+    title={Design of a mobile robot for RoboCup Middle Size League},   
+    year={2009},  
+    volume={},  
+    number={},  
+    pages={1-6},  
+    doi={10.1109/LARS.2009.5418331}
+}
+
+
+% Estima a velocidade usando redes neurais.
+% O trabalho cita na introdução alguns outros trabalhos que fazem uso de redes neurais para identificar e/ou controlar a velocidade de rotação de motores.
+@INPROCEEDINGS{speed_observer_IA,  
+    author={ {Phan Quoc Dzung} and  {Le Minh Phuong}},  
+    booktitle={2005 International Conference on Power Electronics and Drives Systems},   
+    title={Control system DC motor with speed estimator by neural  networks},   
+    year={2005},  
+    volume={2},  
+    number={}, 
+    pages={1030-1035},  
+    doi={10.1109/PEDS.2005.1619839}
+}
+
+% Esse trabalho também fez uso de controlador feedforward/back.
+@INPROCEEDINGS{feedforward_control,  
+    author={Y. {Zhetpissov} and A. {Kaibaldiyev} and T. D. {Do}},  
+    booktitle={2018 ELEKTRO},   
+    title={PI anti-windup speed control of permanent magnet synchronous motor based on feedforward compensation},   
+    year={2018},  
+    volume={},  
+    number={},  
+    pages={1-8},  
+    doi={10.1109/ELEKTRO.2018.8398275}
+}
+
+
+% Trabalho sobre uma implementação simples de um controle de malha fechada voltado para robótica móvel.
+% O trabalho apresenta uma boa introdução sobre a importância do controle local de velocidade de giro dos motores e o movimento final do robô. Além de introduzir conceitos importantes relacionados aos encoders.
+% OBS.: TENHO APENAS O REVIEW DO TRABALHO. NÃO CONSEGUI ACESSO AO TRABALHO COMPLETO PELA CAPES CAFE.
+% 10.1007/978-1-4020-6266-7_71
+@InProceedings{simple_speed_feedback,
+    author="Sharan, R. V.
+    and Onwubolu, G. C.
+    and Singh, R.
+    and Reddy, H.
+    and Kumar, S.",
+    editor="Sobh, Tarek
+    and Elleithy, Khaled
+    and Mahmood, Ausif
+    and Karim, Mohammed",
+    title="A Simple Speed Feedback System for Low Speed DC Motor Control in Robotic Applications",
+    booktitle="Innovative Algorithms and Techniques in Automation, Industrial Electronics and         Telecommunications",
+    year="2007",
+    publisher="Springer Netherlands",
+    address="Dordrecht",
+    pages="397--399",
+    isbn="978-1-4020-6266-7"
+}
+
+% Livro bem amplo, embora antigo...
+% Fala sobre: Controle, Observação de estado (Kalman) entre outros assuntos, focando na aplicabilidade e em implementações embarcados em microcontroladores
+@Inbook{Harashima1983_control_observers,
+author="Harashima, Fumio",
+editor="Tzafestas, Spyros G.",
+title="Speed Control of Motor Drives via Microprocessors",
+bookTitle="Microprocessors in Signal Processing, Measurement and Control",
+year="1983",
+publisher="Springer Netherlands",
+address="Dordrecht",
+pages="283--298",
+abstract="The advance in LSI technology has made it possible to utilize microprocessors economically and efficiently in motor drive control systems. This chapter describes the state of the art on speed control systems of motor drives via microprocessors. The recent progress of microprocessor-based motor control systems is, first, briefly reviewed, and the basic concept of the systems is presented. Then, the applications of modern control theory are discussed aiming speed accuracy, time-optimal dynamic response and robustness. Finally three practical examples of microprocessor-based motor speed control systems are shown.",
+isbn="978-94-009-7007-6",
+doi="10.1007/978-94-009-7007-6_13",
+url="https://doi.org/10.1007/978-94-009-7007-6_13"
+}
+
+@book{ogata2011engenharia,
+  title={Engenharia de controle moderno},
+  author={Ogata, K.},
+  isbn={9788576058106},
+  url={https://books.google.com.br/books?id=iL3FYgEACAAJ},
+  year={2011},
+  publisher={PRENTICE HALL BRASIL}
+}
+
+%Experimental results show that low speed control performance using the instantaneous speed estimation with inertia identification is superior to that of conventional one
+@INPROCEEDINGS{LOW_SPEED_CONTROL,  author={ {Gaolin Wang} and  {Dianguo Xu} and  {Yong Yu} and  {Ming Yang}},  booktitle={2006 6th World Congress on Intelligent Control and Automation},   title={Low Speed Control of Permanent Magnet Synchronous Motor Based on Instantaneous Speed Estimation},   year={2006},  volume={2},  number={},  pages={8033-8036},  doi={10.1109/WCICA.2006.1713537}}
+
+% Controlador FeedBack-FeedForward para controle de velocidade em motores DC
+@INPROCEEDINGS{feedback_feedforward_control01,  
+author={I. {Okoro}},  
+booktitle={2019 IEEE PES/IAS PowerAfrica},   
+title={Feedback–Feedforward Compensation of a DC Motor},  
+year={2019},  
+volume={},  
+number={},  
+pages={385-389},  
+doi={10.1109/PowerAfrica.2019.8928655}}
+
+% Esse não foi de nenhuma ajuda, mas tb pode servir de ref. como trabalhos que usaram feeforward and feedback control
+@INPROCEEDINGS{feedback_feedforward_control02,  author={F. J. {Woehrer} and F. A. {Himmelstoss}},  booktitle={Proceedings of the 1996 IEEE IECON. 22nd International Conference on Industrial Electronics, Control, and Instrumentation},   title={Combined feedforward and feedback control of the field in a DC motor drive},   year={1996},  volume={1},  number={},  pages={59-65 vol.1},  doi={10.1109/IECON.1996.570901}}
+
+% Um trabalho sobre controlador feedback em motor DC via PWM.
+% Focado na implementação em software embarcado.
+% Tem uma intro. sobre PWM, motores DCs e lista algumas alternativas de controladores.
+@INPROCEEDINGS{pwm_control,  author={K. S. {Ravi Kumar} and  {Jaideep} and  {Rohit} and  {Vikas}},  booktitle={2015 International Conference on Control, Instrumentation, Communication and Computational Technologies (ICCICCT)},   title={Microprocessor based closed loop speed control of DC motor using PWM},   year={2015},  volume={},  number={},  pages={255-257},  doi={10.1109/ICCICCT.2015.7475285}}
+
+% sistema de controle embarcado em ARM.
+% O autor usou um RTOS também.
+@INPROCEEDINGS{embedded_control,  author={H. {Wu} and X. {Chen} and L. {Hu}},  booktitle={2008 ISECS International Colloquium on Computing, Communication, Control, and Management},   title={Embedded System of DC Motor Speed Control Based on ARM},   year={2008},  volume={2},  number={},  pages={123-126},  doi={10.1109/CCCM.2008.106}}
+
+% Trabalha relacionado a zona morta de motores
+@INPROCEEDINGS{dead_zone,  author={E. P. {Mendes} and A. A. D. {Medeiros}},  booktitle={2010 Latin American Robotics Symposium and Intelligent Robotics Meeting},   title={Identification of Quasi-linear Dynamic Model with Dead Zone for Mobile Robot with Differential Drive},   year={2010},  volume={},  number={},  pages={132-137},  doi={10.1109/LARS.2010.36}}
+
+% MMQ
+@Inbook{MMQ,
+author="Brandt, Siegmund",
+title="The Method of Least Squares",
+bookTitle="Data Analysis: Statistical and Computational Methods for Scientists and Engineers",
+year="2014",
+publisher="Springer International Publishing",
+address="Cham",
+pages="209--265",
+abstract="The method of least squares was first developed by LEGENDRE and GAUSS. In the simplest case it consists of the following prescription:",
+isbn="978-3-319-03762-2",
+doi="10.1007/978-3-319-03762-2_9",
+url="https://doi.org/10.1007/978-3-319-03762-2_9"
+}
+
+@misc{esp, 
+title={ESP-IDF Programming Guide},
+author={Espressif Systems},
+url={https://docs.espressif.com/projects/esp-idf/en/stable/api-reference/index.html}, 
+journal={ESP}
+}
+
+@manual{Senn:2009,
+      title  = "Using {\LaTeX} for Your Thesis",
+      author = "Mark Senn",
+      url    = "http://engineering.purdue.edu/~mark/puthesis",
+      year   = "2009 (accessed February 3, 2014)"
+}
+
+% Pololu.com. n.d. Pololu - 30:1 Micro Metal Gearmotor HP 6V With Extended Motor Shaft. [online] Available at: <https://www.pololu.com/product/2212/resources> [Accessed 3 December 2020].
+
+@misc{Pololu,
+    title={{Pololu} Robotics and Eletronics},
+    author={POLOLU},
+    howpublished = "\url{https://www.pololu.com/}",
+    note = {Acesso: 3 Dezembro 2020}
+}
+
+@misc{Pololu:Encoder_no_motor,
+    title ={Pair, Magnetic Encoder},
+    author={POLOLU},
+    subtitle = {Magnetic Encoder Pair Kit for Micro Metal Gearmotors},
+    howpublished={\url{https://www.pololu.com/product/3081}},
+    note = {Acesso: 3 Dezembro 2020}
+}
+
+@misc{Pololu:Encoder,
+    title = "Magnetic Encoder",
+    author={POLOLU},
+    subtitle={Magnetic Encoder Pair Kit for Micro Metal Gearmotors, 12 CPR, 2.7-18V},
+    publisher={Pololu Robotics and Eletronics},
+    howpublished={\url{https://www.pololu.com/product/3081/specs}},
+    note = {Acesso: 3 Dezembro 2020}
+}
+
+@misc{Pololu:Driver,
+    title = "Driver Motor",
+    author={POLOLU},
+    subtitle={TB6612FNG Dual Motor Driver Carrier},
+    publisher={Pololu Robotics and Eletronics},
+    howpublished={\url{https://www.pololu.com/product/713/resources}},
+    note = {Acesso: 3 Dezembro 2020}
+}
+
+@misc{esp32:datasheet,
+    title={ESP32-DATASHEET},
+    author={Espressif Systems},
+    howpublished={\url{https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf}},
+    note={Acesso: 3 Dezembro 2020}
+}
+
+@misc{bateria:futuramix,
+    title={Ne-ba931},
+    author={Turnigy power systems},
+    howpublished={\url{http://www.futuramix.com.br/bateria-lipo-1s-37v-750mah-ne-ba931-para-solo-pro-180-helicoptero-pode-retirar/prod-4516975/}},
+    note={Acesso: 3 Dezembro 2020}
+}
+
+@misc{POTI,
+    title={TDP Equipe Poti de Futebol de Robôs da UFRN 2019.},
+    author={{EQUIPE POTI}},
+    howpublished={\url{http://sistemaolimpo.org/midias/uploads/a17801f6c003c72c7c9e0f8efd5c2d4e.pdf}},
+    note={Acesso: 3 Dezembro 2020}
+}
+
+@misc{VSSS,
+    title={Regras IEEE Very Small Size Soccer (VSSS)},
+    author={{IEEE League}},
+    howpublished={\url{http://200.145.27.208/cbr/wp-content/uploads/2020/07/vssRegras_Portugues.pdf}},
+    note={Acesso: 3 Dezembro 2020}
+}
+
+@misc{Robocup,
+    title = {Robocup},
+    howpublished={\url{https://www.robocup.org/}},
+    note = {Acesso: 3 Dezembro 2020}
+}
+
+@article{Kalman:ofid,
+    Author = {Kalman, Rudolph Emil},
+    Title = {A New Approach to Linear Filtering and Prediction Problems},
+    Journal = {Transactions of the ASME--Journal of Basic Engineering},
+    Volume = {82},
+    Number = {Series D},
+    Pages = {35--45},
+    Year = {1960}
+}
+
+@Inbook{kalman:book,
+title="Kalman Filter: An Elementary Approach",
+author="Charles K. {Chui} and Guanrong {Chen}",
+bookTitle="Kalman Filtering: with Real-Time Applications",
+year="2009",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="20--32",
+abstract="This chapter is devoted to a most elementary introduction to the Kalman filtering algorithm. By assuming invertibility of certain matrices, the Kalman filtering ``prediction-correction'' algorithm will be derived based on the optimality criterion of least-squares unbiased estimation of the state vector with the optimal weight, using all available data information. The filtering algorithm is first obtained for a system with no deterministic (control) input. By superimposing the deterministic solution, we then arrive at the general Kalman filtering algorithm.",
+isbn="978-3-540-87849-0",
+doi="10.1007/978-3-540-87849-0_2",
+url="https://doi.org/10.1007/978-3-540-87849-0_2"
+}
+
+@misc{ kalman:wiki,
+author = "{Wikipedia contributors}",
+title = "Kalman filter --- {Wikipedia}{,} The Free Encyclopedia",
+year = "2020",
+url = "https://en.wikipedia.org/w/index.php?title=Kalman_filter&oldid=991999986", 
+note = "[Online; accessed 4-December-2020]"
+}
